@@ -1,0 +1,172 @@
+﻿@model VaktiImProject.Models.GATIM
+
+@{
+    ViewBag.Title = "Shto Gatim";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+<h2>Shto nje Gatim</h2>
+
+
+@using (Html.BeginForm("Add", "GATIMs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>GATIM</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.gatim_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.gatim_id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.gatim_id, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.emriGatimit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.emriGatimit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.emriGatimit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.pershkrimi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pershkrimi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pershkrimi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.cmimi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cmimi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cmimi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.disponueshmeria, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.disponueshmeria)
+                    @Html.ValidationMessageFor(model => model.disponueshmeria, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.foto, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.foto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.foto, "", new { @class = "text-danger" })*@
+                <input type="file" name="ImageFile" required>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.datakrijimit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.datakrijimit, new { htmlAttributes = new { @class = "datepicker" } })
+            @Html.ValidationMessageFor(model => model.datakrijimit, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.datamodifikimit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.datamodifikimit, new { htmlAttributes = new { @class = "datepicker" } })
+                @Html.ValidationMessageFor(model => model.datamodifikimit, "", new { @class = "text-danger" })
+
+
+            </div>
+        </div>*@
+    <br />
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.createdBy, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.createdBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.createdBy, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <br />
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.modifiedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.modifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.modifiedBy, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+    <br />
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.kategori_id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.kategori_id, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.kategori_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Index")" class="btn btn-info">
+                <i class="fa fa-arrow-left"></i>
+                Kthehu
+            </a>
+            <button type="submit" value="Create" class="btn btn-success">
+                <i class=" fa fa-save"></i>
+                Ruaj
+            </button>
+        </div>
+    </div>
+
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+            $(function () {
+                $(".datepicker").datepicker({
+                    dateFormat: "yy-mm-dd",
+                    changeMonth : true,
+                    changeYear: true,
+                    showOn : "both"
+
+                });
+
+            });
+    </script>
+
+}

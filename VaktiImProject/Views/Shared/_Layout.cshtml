@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Vakti Im</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                @Html.ActionLink("Vakti Im", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*<p class="site-title">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/Foto/vaktiim1.PNG" alt="" />
+            </a>
+        </p>*@
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                   
+                    <li>@Html.ActionLink("Rreth nesh", "About", "HOME")</li>
+                    <li>@Html.ActionLink("Na kontaktoni ", "Contact", "HOME")</li>
+                    <li>@Html.ActionLink("Login", "Login", "MyAccount")</li>
+                    <li>@Html.ActionLink("Regjistrohu", "Registration", "MyAccount")</li>
+
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Perdoruesit", "Index", "PERDORUEs")</li>
+                        <li>@Html.ActionLink("Porosite", "Porosi", "POROSIs")</li>
+                        <li>@Html.ActionLink("Gatimet aktive", "GatimetAktive", "GATIMs")</li>
+
+
+                    }
+
+                    @if (User.IsInRole("responsible"))
+                    {
+                        <li>@Html.ActionLink("Gatimet", "Index", "GATIMs")</li>
+                        <li>@Html.ActionLink("Porosite e sukseshme", "ShfaqPorosi1", "POROSIs")</li>
+                        <li>@Html.ActionLink("Porosit e anulluara", "ShfaqPorosi0", "POROSIs")</li>
+                        <li>@Html.ActionLink("Logout", "MyProfile", "HOME")</li>
+
+                    }
+
+                    @if (User.IsInRole("client"))
+                    {
+                        <li>@Html.ActionLink("Porosit e Mia", "Myorders", "POROSIs")</li>
+                        <li>@Html.ActionLink("Logout", "MyProfile", "HOME")</li>
+
+
+
+                    }
+
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br />
+       
+        <div>
+            <img src="~/Foto/vakti.png" alt="" />
+            <img src="~/Foto/FOTO1.jpg" alt="" height="450" width="1200" />
+        </div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Vakti Im</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

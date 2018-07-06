@@ -1,0 +1,60 @@
+﻿@model IEnumerable<VaktiImProject.Models.POROSI>
+
+@{
+    ViewBag.Title = "Porosit e anulluara";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h4> Lista e porosive të anulluara</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Statusi
+                </th>
+                <th>
+                    Veprimet
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.datetime_Porosi.ToString("dd.MM.yyyy hh:mm")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status_porosie)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", new { id = item.porosi_id })" class="btn btn-info btn-sm">
+                            <i class="fa fa-info"></i>
+                            Detaje
+                        </a>
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

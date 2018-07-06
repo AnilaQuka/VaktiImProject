@@ -1,0 +1,104 @@
+﻿@model VaktiImProject.Models.GATIM
+
+@{
+    ViewBag.Title = "Detajet e gatimit";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<h3>Detajet e gatimit</h3>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(model => model.emriGatimit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.emriGatimit, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.pershkrimi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.pershkrimi, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.KATEGORI.emri, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.KATEGORI.emri, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.disponueshmeria, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.disponueshmeria, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PERDORUE1.emri, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PERDORUE1.emri, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PERDORUE.emri, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PERDORUE1.emri, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.datakrijimit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.datakrijimit, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.datamodifikimit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.datamodifikimit, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.createdBy, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.createdBy, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.modifiedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.modifiedBy, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.foto, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.foto, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })*@
+            <img src="@Url.Content(Model.foto)" width="150" height="150" />
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.cmimi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.cmimi, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <a href="@Url.Action("GatimetAktive")" class="btn btn-info">
+            <i class="fa fa-arrow-left"></i>
+            Ktheu
+        </a>
+    </div>
+</div>
+
+
+

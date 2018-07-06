@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Rreth nesh </h2>
+            <h4>Ne jemi vetëm një <i>klikim</i> larg jush !</h4>
+            <p>Për më shumë kureshtje ejani dhe na vizitoni ☺ </p>
+
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-sm-4">
+
+            <img src="~/Foto/123.png" alt="" class="logo" />
+        </div>
+        <div class="col-sm-8">
+            <h2>Vlerat tona ..</h2>
+            <p>
+                Vakti im është një aplikacion i ndërtuar për porosi online. Produktet që trajtohen janë ushqimet,
+                ku ju mund të porosisni vaktin tuaj duke rezervuar online, mjafton të jeni i regjistruar në sistem .
+            </p>
+            <h4><strong>MISIONI:</strong> Besimi jua frymëzimi jonë</h4>
+            <p><strong>VIZION:</strong>  Për ne shija vjen e para..</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<VaktiImProject.Models.GATIM>
+
+@{
+    ViewBag.Title = "Gatimet";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h4> Lista e Gatimeve </h4>
+    </div>
+    <div class="col-md-4">
+        <a href="@Url.Action("Add")" class="btn btn-primary">
+            <i class="fa fa-plus-square"></i>
+            Shto
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    Emri
+                </th>
+
+                <th>
+                    Statusi
+                </th>
+
+                <th>
+                    Data
+                </th>
+
+                <th>
+                    Kategoria
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.emriGatimit)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.disponueshmeria)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.datakrijimit)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KATEGORI.emri)
+                    </td>
+                    <td class="btn-group">
+                        <a href="@Url.Action("Edit", new { id = item.gatim_id })" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            Modifiko
+                        </a>
+                        <a href="@Url.Action("Details", new { id = item.gatim_id })" class="btn btn-info">
+                            <i class="fa fa-info"></i>
+                            Detaje
+                        </a>
+                        <a href="@Url.Action("Delete", new { id = item.gatim_id })" class="btn btn-danger">
+                            <i class="fa fa-danger"></i>
+                            Fshi
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

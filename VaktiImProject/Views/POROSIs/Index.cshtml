@@ -1,0 +1,74 @@
+﻿@model IEnumerable<VaktiImProject.Models.POROSI>
+
+@{
+    ViewBag.Title = "Porositë";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.datetime_Porosi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status_porosie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_Modifikimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADRESA.rruga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERDORUE.emri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERDORUE1.emri)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.datetime_Porosi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status_porosie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_Modifikimit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADRESA.rruga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PERDORUE.emri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PERDORUE1.emri)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.porosi_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.porosi_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.porosi_id })
+            </td>
+        </tr>
+    }
+
+</table>

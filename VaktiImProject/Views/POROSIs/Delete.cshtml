@@ -1,0 +1,83 @@
+﻿@model VaktiImProject.Models.POROSI
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>POROSI</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.datetime_Porosi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datetime_Porosi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_porosie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_porosie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_Modifikimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_Modifikimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADRESA.rruga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADRESA.rruga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERDORUE.emri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERDORUE.emri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERDORUE1.emri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERDORUE1.emri)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

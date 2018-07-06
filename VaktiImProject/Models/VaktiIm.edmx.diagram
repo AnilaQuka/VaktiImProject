@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19f22617b2f04976a95b39f6e5af4284" Name="Diagram1">
+        <EntityTypeShape EntityType="Vakti_ImModel.ADRESA" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Vakti_ImModel.KATEGORI" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Vakti_ImModel.PERDORUE" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Vakti_ImModel.POROSI" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Vakti_ImModel.POROSI_ITEM" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Vakti_ImModel.ROLI" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Vakti_ImModel.sysdiagram" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Vakti_ImModel.POROSI_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="Vakti_ImModel.PERDORUES_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="Vakti_ImModel.POROSI_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="Vakti_ImModel.POROSI_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="Vakti_ImModel.POROSI_ITEM_fk0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Vakti_ImModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Vakti_ImModel.GATIM" Width="1.5" PointX="5.25" PointY="4.5" />
+        <AssociationConnector Association="Vakti_ImModel.GATIM_fk0" />
+        <AssociationConnector Association="Vakti_ImModel.GATIM_fk1" />
+        <AssociationConnector Association="Vakti_ImModel.GATIM_fk2" />
+        <AssociationConnector Association="Vakti_ImModel.POROSI_ITEM_fk1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

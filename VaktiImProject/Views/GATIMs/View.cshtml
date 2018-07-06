@@ -1,0 +1,119 @@
+﻿@model VaktiImProject.Models.GATIM
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+<h2>View</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div>
+        <h4>GATIM</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.emriGatimit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.emriGatimit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.pershkrimi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.pershkrimi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cmimi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cmimi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.disponueshmeria)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.disponueshmeria)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.foto)*@
+                <img src="@Url.Content(Model.foto)" width=" 250" height="250" />
+            </dt>
+
+            @*<dd>
+                    @Html.DisplayFor(model => model.foto)
+                </dd>*@
+
+            <dt>
+                @Html.DisplayNameFor(model => model.datakrijimit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.datakrijimit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.datamodifikimit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.datamodifikimit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PERDORUE.emri)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PERDORUE.emri)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PERDORUE1.emri)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PERDORUE1.emri)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.KATEGORI.emri)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KATEGORI.emri)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.gatim_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

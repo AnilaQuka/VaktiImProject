@@ -1,0 +1,62 @@
+﻿@model VaktiImProject.Models.POROSI
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+<h3>Detajet e gatimit</h3>
+
+<div class="form-horizontal">
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PERDORUE.emri, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PERDORUE.emri, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PERDORUE1.emri, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PERDORUE1.emri, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.status_porosie, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.status_porosie, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.datetime_Porosi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.datetime_Porosi, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.data_Modifikimit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.data_Modifikimit, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ADRESA.pershkrimi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ADRESA.pershkrimi, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+        </div>
+    </div>
+
+</div>
+
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.porosi_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

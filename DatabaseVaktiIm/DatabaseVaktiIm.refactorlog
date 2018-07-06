@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="f67c1506-6c68-4796-b0cd-296e1770bad8" ChangeDateTime="06/23/2018 20:17:24">
+    <Property Name="ElementName" Value="[dbo].[GATIM].[emri]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GATIM]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="emriGatimit" />
+  </Operation>
+</Operations>

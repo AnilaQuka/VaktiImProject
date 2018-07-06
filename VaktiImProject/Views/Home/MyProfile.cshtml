@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Logout ";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row">
+        <div class="col-md-12 alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    </div>
+}
+
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Logout", "MyAccount", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+    }
+}

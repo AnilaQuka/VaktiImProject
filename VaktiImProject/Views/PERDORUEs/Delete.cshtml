@@ -1,0 +1,96 @@
+﻿@model VaktiImProject.Models.PERDORUE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PERDORUE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.emri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mbiemri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mbiemri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aktiv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aktiv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.krijimPerdorues)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.krijimPerdorues)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modifikimPerdoruesi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modifikimPerdoruesi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROLI.emri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROLI.emri)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
